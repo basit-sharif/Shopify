@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h3{
+        @apply text-xl font-semibold
+    }
+    h4{
+        @apply text-lg
+    }
+    
+}
