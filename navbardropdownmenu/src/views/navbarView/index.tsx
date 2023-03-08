@@ -30,7 +30,7 @@ export default function NavbarView({ navItem }: typeofNavItems) {
         <div className={`${sidebar === true ? "blur-sm" : "blur-0"} cursor-pointer`}>
           <Image src={logo} alt="motion" />
         </div>
-        <ul className="hidden md:flex text-white space-x-10">
+        <ul className="hidden md:flex text-white space-x-10 ">
           {navItem && navItem.map((item: { label: string, dropdown: boolean, child?: Array<subMenuType> }, index: number) => (
             <div key={index + 700} className={`flex items-center cursor-pointer group ${item.child ? "hover:bg-white hover:text-black" : ""} py-3 px-4 `}>
               <h4 className={`${inter.className}`}>

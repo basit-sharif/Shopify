@@ -1,7 +1,8 @@
 import { GrClose } from 'react-icons/gr';
-import { RiArrowDropDownLine } from 'react-icons/ri';
 import { BsFacebook } from 'react-icons/bs';
 import { FaTwitter } from 'react-icons/fa';
+import Expand from './Expand';
+import { NavbarItemType } from '@/typesandArrays/NavbarItems';
 
 export default function OffCanvasSidebarMobile({ data, sidebar, setSidebar }: any) {
     return (
@@ -14,11 +15,10 @@ export default function OffCanvasSidebarMobile({ data, sidebar, setSidebar }: an
             </div>
           </div>
           <ul className=" w-full">
-            {data.map((item: any, index: number) =>
-              <li key={index} className="rounded-sm cursor-pointer flex justify-between w-full border-b-2 p-4 transition duration-75 active:bg-gray-200 " >
-                <h4>{item.label}</h4>
-                {item.dropdown ? <RiArrowDropDownLine size={30} /> : ""}
-  
+            {data.map((item: NavbarItemType, index: number) =>
+              <li key={index}>
+                <Expand items={item} sidebar={sidebar} setSidebar={setSidebar}/>
+                {/* <Expand label={item.label} dropdown={item.dropdown} child={item.child}/> */}
               </li>
             )}
           </ul>
