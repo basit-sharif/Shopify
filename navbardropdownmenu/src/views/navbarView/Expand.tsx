@@ -5,15 +5,22 @@ import { RiArrowDropDownLine } from 'react-icons/ri';
 export default function Expand({ items , sidebar, setSidebar }: any) {
     const [isrotate, setrotate] = useState(false)
     const [isdropdown, setDropdown] = useState(false);
+    const [animationtime, setAnimationtime] = useState(false);
+    function dropdownanimation(){
+        setTimeout(() => {
+            setAnimationtime(!animationtime);
+        }, 500);
+    }
+
     return (
-        <div className='rounded-sm border-b-2 p-4 active:bg-gray-200 w-full'>
-            <div onClick={() => { setrotate(!isrotate); setDropdown(!isdropdown) }} className="cursor-pointer flex justify-between ">
+        <div className={`rounded-sm border-b-2 p-4 active:bg-gray-200 w-full ${isdropdown ? `h-[${items.heightToDisplay}]` : "h-16"} transition-all duration-500`}>
+            <div onClick={() => { setrotate(!isrotate); setDropdown(!isdropdown); dropdownanimation(); }} className="cursor-pointer flex justify-between ">
                 <h4>{items.label}</h4>
                 {items.dropdown ? <div className={`rotate-0 ${isrotate ? "rotate-180" : "rotate-0"} duration-300`}><RiArrowDropDownLine size={30} /></div> : ""}
             </div>
             <div className={`${isdropdown ? "visible" : "hidden"} pl-5`}>
                 {items.child && items.child.map((item: any, index: number) => (
-                    <div key={index + 800} className="space-y-5 py-3">
+                    <div key={index + 800} className={`space-y-5 py-3 transition-all duration-300 translate-y-10 opacity-0 ${animationtime ? "-translate-y-1 opacity-100" : " "}`}>
                         <div className={`${sidebar ? "visible" : "invisible"}`}>
                             {item.firstMenu && item.firstMenu.map((subitem: any, index: number) => (
                                 <div key={index + 900} className="space-y-3">

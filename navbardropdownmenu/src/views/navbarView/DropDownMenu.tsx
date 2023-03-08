@@ -3,16 +3,16 @@ import { subMenuType, everysubMenuType, everysubMenuContentType } from "@/typesa
 
 export default function DropDownMenu({ item }: { item: { label: string, dropdown: boolean, child?: Array<subMenuType> } }) {
     return (
-        <div className={` bg-white absolute top-20 left-0 right-0 ${item.label == "About" ? "md:left-[27rem] lg:left-[43.05rem] w-40 " : " "} `}>
+        <div className={`invisible group-hover:visible hover:visible group-hover:translate-y-0 -translate-y-5 transition-all ease-out  bg-white absolute top-20 left-0 right-0 ${item.label == "About" ? "md:left-[27rem] lg:left-[43.05rem] w-36 py-0" : " "} `}>
             {item.child && item.child.map((subItem: subMenuType, index: number) =>
-                <div key={index + 100} className={`text-black flex justify-between w-11/12 mx-auto py-14 ${item.label == "About" ? "py-0 " : " "} space-x-7`}>
+                <div key={index + 100} className={`text-black flex justify-between w-11/12 mx-auto  ${item.label == "About" ? "py-1" : "py-14 "} space-x-7`}>
                     {/* <div key={index + 100} className="text-black grid grid-cols-4 w-11/12 mx-auto py-14 space-x-7"> */}
                     {subItem.firstMenu && subItem.firstMenu.map((subsubItem: everysubMenuType, index: number) => (
-                        <div key={index + 200} className="space-y-3">
+                        <div key={index + 200} className="space-y-3 ">
                             <h3 className="relative after:bg-black after:content-[' '] after:h-[2px] after:w-[0%] after:left-0 after:-bottom-1 after:absolute after:rounded-3xl after:duration-300 hover:after:w-[4.5rem] ">{subsubItem.heading}</h3>
                             <div className="w-40">
                                 {subsubItem.content && subsubItem.content.map((subsubsubItem: everysubMenuContentType, index: number) => (
-                                    <h4 key={index} className="leading-10 hover:ml-2 duration-300">
+                                    <h4 key={index} className="leading-10 hover:ml-2 duration-200">
                                         {subsubsubItem.label}
                                     </h4>
                                 )

@@ -27,7 +27,7 @@ export default function NavbarView({ navItem }: typeofNavItems) {
   return (
     <main className={`w-full py-7 bg-transparent`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
-        <div className={`${sidebar === true ? "blur-sm" : "blur-0"} cursor-pointer`}>
+        <div className={` cursor-pointer`}>
           <Image src={logo} alt="motion" />
         </div>
         <ul className="hidden md:flex text-white space-x-10 ">
@@ -39,7 +39,8 @@ export default function NavbarView({ navItem }: typeofNavItems) {
               <div className="mt-1">
                 {item.dropdown ? <RiArrowDropDownLine size={25} /> : ""}
               </div>
-              <div className={`invisible ${item.child ? "group-hover:visible hover:visible" : "invisible"}  `}>
+              <div >
+              {/* <div className={` invisible ${item.child ? " " : "invisible"}  `}> */}
                 <DropDownMenu item={item} />
               </div>
             </div>
