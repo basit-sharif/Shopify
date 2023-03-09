@@ -23,7 +23,7 @@ export interface NavbarItemType {
     href?: string,
     headinSubmenu?: string,
     child?: Array<subMenuType>,
-    heightToDisplay?:string,
+    heightToDisplay?: number,
 }
 
 export const NavbarItems: Array<NavbarItemType> = [
@@ -104,7 +104,7 @@ export const NavbarItems: Array<NavbarItemType> = [
                 ]
             }
         ],
-        heightToDisplay:"60rem",
+        heightToDisplay: 60,
     },
     {
         label: "Women",
@@ -168,7 +168,7 @@ export const NavbarItems: Array<NavbarItemType> = [
                 ]
             }
         ],
-        heightToDisplay:"52rem",
+        heightToDisplay: 52,
     },
     {
         label: "About",
@@ -195,11 +195,11 @@ export const NavbarItems: Array<NavbarItemType> = [
                 ],
             }
         ],
-        heightToDisplay:"12rem",
+        heightToDisplay: 12,
     },
     {
         label: "Theme features",
         dropdown: false,
-        heightToDisplay:"0rem",
+        heightToDisplay: 0,
     },
 ] 
