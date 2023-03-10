@@ -27,6 +27,10 @@ export default function NavbarView({ navItem }: typeofNavItems) {
   const [opacityForScroll, setOpacityForScroll] = useState(100);
   const [translate, setTranslate] = useState("translate-y-0");
 
+  if (sidebar) {
+    console.log("Sidebar is open Now");
+  }
+
   const isBrowser = (): boolean => typeof window !== "undefined";
 
   useEffect(() => {
@@ -57,7 +61,7 @@ export default function NavbarView({ navItem }: typeofNavItems) {
 
 
   return (
-    <main className={`w-full py-4 bg-transparent ${navbarcolor ? `${translate} duration-500  bg-white fixed border-y-2 h-20 opacity-${opacityForScroll}` : "bg-transparent "}`}>
+    <main className={`w-full py-4 bg-transparent ${navbarcolor ? `${translate} duration-500  bg-white fixed shadow-sm h-20 opacity-${opacityForScroll}` : "bg-transparent "}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
         <div className={` cursor-pointer`}>
           {navbarcolor ? <Image src={logo2} alt="motion" /> :
@@ -66,11 +70,11 @@ export default function NavbarView({ navItem }: typeofNavItems) {
         </div>
         <ul className={`hidden md:flex flex-wrap space-x-10 text-gray-100 ${navbarcolor ? "text-gray-900" : ""}`}>
           {navItem && navItem.map((item: { label: string, dropdown: boolean, child?: Array<subMenuType> }, index: number) => (
-            <div key={index + 700} className={`flex items-center cursor-pointer group ${item.child ? "hover:bg-white hover:text-black" : ""} py-3 px-4 `}>
-              <h4 className={`${inter.className}`}>
+            <div key={index + 700} className={`hover:border-b-0  border-white flex items-center cursor-pointer group ${item.child ? "hover:bg-white hover:text-black" : ""} pt-3 px-4 `}>
+              <h4 className={`group-hover:border-b-[1px] pb-2 h-full ${item.label == "Theme features" ? "border-transparent" : " "} ${inter.className} `}>
                 {item.label}
               </h4>
-              <div className="mt-1">
+              <div className="-mt-1">
                 {item.dropdown ? <RiArrowDropDownLine size={25} /> : ""}
               </div>
               <div >
