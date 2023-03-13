@@ -3,11 +3,13 @@ import { SpringSummer2021, Backinbusiness, AloneWoman, background } from "@/asse
 export interface everysubMenuContentType {
     label?: string,
     dropdown: boolean,
+    underLineWidth?:string,
     image?: any,
 }
 
 export interface everysubMenuType {
     heading?: string,
+    underLineWidth?:string,
     content?: Array<everysubMenuContentType>,
 }
 
@@ -37,6 +39,7 @@ export const NavbarItems: Array<NavbarItemType> = [
                 firstMenu: [
                     {
                         heading: "All men",
+                        underLineWidth:"4.5rem",
                         content: [
                             {
                                 label: "Third level test",
@@ -55,22 +58,27 @@ export const NavbarItems: Array<NavbarItemType> = [
                             {
                                 label: "Shirts",
                                 dropdown: false,
+                                underLineWidth:"3.4rem",
                             },
                             {
                                 label: "Shorts",
                                 dropdown: false,
+                                underLineWidth:"3.4rem",
                             },
                             {
                                 label: "Boardshorts",
                                 dropdown: false,
+                                underLineWidth:"6.6rem",
                             },
                             {
                                 label: "Jackets",
                                 dropdown: false,
+                                underLineWidth:"3.7rem",
                             },
                             {
                                 label: "Sale",
                                 dropdown: false,
+                                underLineWidth:"2.4rem",
                             },
                         ]
                     }
@@ -119,22 +127,27 @@ export const NavbarItems: Array<NavbarItemType> = [
                             {
                                 label: "All women",
                                 dropdown: false,
+                                underLineWidth:"6.6rem",
                             },
                             {
                                 label: "Dresses",
                                 dropdown: false,
+                                underLineWidth:"3.7rem",
                             },
                             {
                                 label: "Jackets",
                                 dropdown: false,
+                                underLineWidth:"3.7rem",
                             },
                             {
                                 label: "Shirts",
                                 dropdown: false,
+                                underLineWidth:"3.4rem",
                             },
                             {
                                 label: "Pants",
                                 dropdown: false,
+                                underLineWidth:"3.4rem",
                             },
                         ]
                     }
