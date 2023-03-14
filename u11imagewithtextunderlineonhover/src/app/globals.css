@@ -10,6 +10,9 @@
 
 @layer components{
     .image-prop{
-        @apply h-full object-cover brightness-75
+        @apply h-full object-cover
+    }
+    .dullness{
+        @apply absolute inset-0 bg-gradient-to-t from-black to-white opacity-25
     }
 }
