@@ -40,7 +40,7 @@ export default function HeroSection() {
 
   return (
     <div className="h-screen ">
-      <div className={`h-[90%] sm:h-[98%] overflow-hidden`}>
+      <div className={`h-full sm:h-full overflow-hidden`}>
         <Image className={`
         -z-10
         h-full

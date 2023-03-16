@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    h2{
+        @apply text-2xl font-bold
+    }
+    h3{
+        @apply text-lg text-black font-bold
+    }
+    h4{
+        @apply text-xl text-gray-700
+    }
+}
+
+@layer components{
+    .reviewerImg {
+        @apply w-16 h-16 object-cover rounded-full object-top;
+      }
+}
